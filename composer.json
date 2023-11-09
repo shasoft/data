@@ -1,0 +1,22 @@
+{
+    "name": "shasoft/data",
+    "type": "library",
+    "description": "Data manipulation package",
+    "keywords": [
+        "serialize",
+        "conversion",
+        "php"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shasoft\\Data\\": "classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shabanov Valera",
+            "email": "shasoft_data@shasoft.com"
+        }
+    ]
+}

@@ -38,7 +38,8 @@
 * [Update](#update)
 * [Select+Pagination](#selectpagination)
 
-### <a name="select"></a>Select
+---
+### Select
 ```php
 $builder->select(User::class)->get();
 ```
@@ -64,7 +65,8 @@ FROM
 ```
 
 
-### <a name="selectalias-column"></a>Select(Alias Column)
+---
+### Select(Alias Column)
 ```php
 $builder
     ->select(User::class, [
@@ -97,7 +99,8 @@ FROM
 ```
 
 
-### <a name="selectwherelike"></a>Select+Where+Like
+---
+### Select+Where+Like
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -127,7 +130,8 @@ WHERE
 ```
 
 
-### <a name="selectwherenot-like"></a>Select+Where+Not Like
+---
+### Select+Where+Not Like
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -157,7 +161,8 @@ WHERE
 ```
 
 
-### <a name="selectwherewhere-1"></a>Select+Where+Where 1
+---
+### Select+Where+Where 1
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -199,7 +204,8 @@ WHERE
 ```
 
 
-### <a name="selectwherewhere-2"></a>Select+Where+Where 2
+---
+### Select+Where+Where 2
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -241,7 +247,8 @@ WHERE
 ```
 
 
-### <a name="selectwherenull"></a>Select+Where+=Null
+---
+### Select+Where+=Null
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -272,7 +279,8 @@ WHERE
 ```
 
 
-### <a name="selectwherenull"></a>Select+Where+Null
+---
+### Select+Where+Null
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -304,7 +312,8 @@ WHERE
 ```
 
 
-### <a name="selectwherenotnull"></a>Select+Where+NotNull
+---
+### Select+Where+NotNull
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -336,7 +345,8 @@ WHERE
 ```
 
 
-### <a name="selectwherebetween"></a>Select+Where+Between
+---
+### Select+Where+Between
 ```php
 $builder
     ->select(Article::class, ['id'])
@@ -366,7 +376,8 @@ WHERE
 ```
 
 
-### <a name="selectwherenot-between"></a>Select+Where+Not Between
+---
+### Select+Where+Not Between
 ```php
 $builder
     ->select(Article::class, ['id'])
@@ -396,7 +407,8 @@ WHERE
 ```
 
 
-### <a name="selectjoininner"></a>Select+Join+Inner
+---
+### Select+Join+Inner
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -436,7 +448,8 @@ WHERE
 ```
 
 
-### <a name="selectjoinleft"></a>Select+Join+Left
+---
+### Select+Join+Left
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -476,7 +489,8 @@ WHERE
 ```
 
 
-### <a name="selectjoinright"></a>Select+Join+Right
+---
+### Select+Join+Right
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -516,7 +530,8 @@ WHERE
 ```
 
 
-### <a name="selectjoin3"></a>Select+Join(3)
+---
+### Select+Join(3)
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -591,7 +606,8 @@ WHERE
 ```
 
 
-### <a name="selectjoinorderby-1"></a>Select+Join+OrderBy 1
+---
+### Select+Join+OrderBy 1
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -643,7 +659,8 @@ ORDER BY
 ```
 
 
-### <a name="selectjoinorderby-2"></a>Select+Join+OrderBy 2
+---
+### Select+Join+OrderBy 2
 ```php
 $select = $builder
     ->select(Article::class, ['title'])
@@ -712,7 +729,8 @@ ORDER BY
 ```
 
 
-### <a name="selectsum"></a>Select+Sum
+---
+### Select+Sum
 ```php
 $builder
     ->select(User::class, ['sum(age)'])
@@ -741,7 +759,8 @@ WHERE
 ```
 
 
-### <a name="selectsumalias-column"></a>Select+Sum(Alias Column)
+---
+### Select+Sum(Alias Column)
 ```php
 $builder
     ->select(User::class, [
@@ -775,7 +794,8 @@ WHERE
 ```
 
 
-### <a name="selectlimit-1"></a>Select+Limit 1
+---
+### Select+Limit 1
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -802,7 +822,8 @@ LIMIT 10 OFFSET 5
 ```
 
 
-### <a name="selectlimit-2"></a>Select+Limit 2
+---
+### Select+Limit 2
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -829,7 +850,8 @@ LIMIT 9
 ```
 
 
-### <a name="selectdistinct"></a>Select+Distinct
+---
+### Select+Distinct
 ```php
 $builder
     ->select(Article::class, ['userId'])
@@ -852,7 +874,8 @@ FROM
 ```
 
 
-### <a name="selectorderby"></a>Select+OrderBy
+---
+### Select+OrderBy
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -888,7 +911,8 @@ DESC
 ```
 
 
-### <a name="selectgroupby"></a>Select+GroupBy
+---
+### Select+GroupBy
 ```php
 $builder
     ->select(Article::class, ['userId'])
@@ -915,7 +939,8 @@ GROUP BY
 ```
 
 
-### <a name="selecthaving"></a>Select+Having
+---
+### Select+Having
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -949,7 +974,8 @@ HAVING
 ```
 
 
-### <a name="selecthavingbetween"></a>Select+Having+Between
+---
+### Select+Having+Between
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -983,7 +1009,8 @@ HAVING
 ```
 
 
-### <a name="selecthavingnot-between"></a>Select+Having+Not Between
+---
+### Select+Having+Not Between
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -1017,7 +1044,8 @@ HAVING
 ```
 
 
-### <a name="selectinarray"></a>Select+In(Array)
+---
+### Select+In(Array)
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1046,7 +1074,8 @@ WHERE
 ```
 
 
-### <a name="selectinselect"></a>Select+In(Select)
+---
+### Select+In(Select)
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1094,7 +1123,8 @@ WHERE
 ```
 
 
-### <a name="selectinselectmulticolumns"></a>Select+In(Select)+MultiColumns
+---
+### Select+In(Select)+MultiColumns
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1149,7 +1179,8 @@ WHERE
 ```
 
 
-### <a name="selectinselectfunction"></a>Select+In(Select)+Function
+---
+### Select+In(Select)+Function
 ```php
 $builder
     ->select(Article::class, ['id', 'userId'])
@@ -1190,7 +1221,8 @@ WHERE
 ```
 
 
-### <a name="selectinselectcontextname"></a>Select+In(Select)+Context.Name
+---
+### Select+In(Select)+Context.Name
 ```php
 $builder->select(User::class, ['name'])
     ->name('main')
@@ -1238,7 +1270,8 @@ WHERE
 ```
 
 
-### <a name="insertvaluesarray"></a>Insert+Values(Array)
+---
+### Insert+Values(Array)
 ```php
 $builder
     ->insert(User::class)
@@ -1252,16 +1285,17 @@ $builder
 #### mysql
 ```sql
 INSERT INTO `shasoft-dbschemadev-table-user`(`name`, `age`, `role`)
-VALUES('Igor', 72, 'Moderator')
+VALUES('Igor', 30, 'Moderator')
 ```
 #### pgsql
 ```sql
 INSERT INTO "shasoft-dbschemadev-table-user"("name", "age", "role")
-VALUES('Igor', 60, 'Moderator')
+VALUES('Igor', 27, 'Moderator')
 ```
 
 
-### <a name="insertvaluesclosure"></a>Insert+Values(Closure)
+---
+### Insert+Values(Closure)
 ```php
 $builder
     ->insert(User::class)
@@ -1310,7 +1344,8 @@ VALUES(
 ```
 
 
-### <a name="delete"></a>Delete
+---
+### Delete
 ```php
 $builder
     ->delete(User::class)
@@ -1338,7 +1373,8 @@ WHERE
 ```
 
 
-### <a name="deleteinarray"></a>Delete+In(Array)
+---
+### Delete+In(Array)
 ```php
 $builder
     ->delete(User::class)
@@ -1366,7 +1402,8 @@ WHERE
 ```
 
 
-### <a name="update"></a>Update
+---
+### Update
 ```php
 $builder
     ->update(User::class)
@@ -1403,7 +1440,8 @@ WHERE
 ```
 
 
-### <a name="selectpagination"></a>Select+Pagination
+---
+### Select+Pagination
 ```php
 $builder->select(User::class, ['id', 'name'])->pagination(2, 3);
 ```

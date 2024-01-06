@@ -1,123 +1,44 @@
 ## Sql Query Builder examples
+* [Select](#select)
+* [Select(Alias Column)](#selectalias-column)
+* [Select+Where+Like](#selectwherelike)
+* [Select+Where+Not Like](#selectwherenot-like)
+* [Select+Where+Where 1](#selectwherewhere-1)
+* [Select+Where+Where 2](#selectwherewhere-2)
+* [Select+Where+=Null](#selectwherenull)
+* [Select+Where+Null](#selectwherenull)
+* [Select+Where+NotNull](#selectwherenotnull)
+* [Select+Where+Between](#selectwherebetween)
+* [Select+Where+Not Between](#selectwherenot-between)
+* [Select+Join+Inner](#selectjoininner)
+* [Select+Join+Left](#selectjoinleft)
+* [Select+Join+Right](#selectjoinright)
+* [Select+Join(3)](#selectjoin3)
+* [Select+Join+OrderBy 1](#selectjoinorderby-1)
+* [Select+Join+OrderBy 2](#selectjoinorderby-2)
+* [Select+Sum](#selectsum)
+* [Select+Sum(Alias Column)](#selectsumalias-column)
+* [Select+Limit 1](#selectlimit-1)
+* [Select+Limit 2](#selectlimit-2)
+* [Select+Distinct](#selectdistinct)
+* [Select+OrderBy](#selectorderby)
+* [Select+GroupBy](#selectgroupby)
+* [Select+Having](#selecthaving)
+* [Select+Having+Between](#selecthavingbetween)
+* [Select+Having+Not Between](#selecthavingnot-between)
+* [Select+In(Array)](#selectinarray)
+* [Select+In(Select)](#selectinselect)
+* [Select+In(Select)+MultiColumns](#selectinselectmulticolumns)
+* [Select+In(Select)+Function](#selectinselectfunction)
+* [Select+In(Select)+Context.Name](#selectinselectcontextname)
+* [Insert+Values(Array)](#insertvaluesarray)
+* [Insert+Values(Closure)](#insertvaluesclosure)
+* [Delete](#delete)
+* [Delete+In(Array)](#deleteinarray)
+* [Update](#update)
+* [Select+Pagination](#selectpagination)
 
-- [Sql Query Builder examples](#sql-query-builder-examples)
-  - [Select](#select)
-    - [mysql](#mysql)
-    - [pgsql](#pgsql)
-  - [Select(Alias Column)](#selectalias-column)
-    - [mysql](#mysql-1)
-    - [pgsql](#pgsql-1)
-  - [Select+Where+Like](#selectwherelike)
-    - [mysql](#mysql-2)
-    - [pgsql](#pgsql-2)
-  - [Select+Where+Not Like](#selectwherenot-like)
-    - [mysql](#mysql-3)
-    - [pgsql](#pgsql-3)
-  - [Select+Where+Where 1](#selectwherewhere-1)
-    - [mysql](#mysql-4)
-    - [pgsql](#pgsql-4)
-  - [Select+Where+Where 2](#selectwherewhere-2)
-    - [mysql](#mysql-5)
-    - [pgsql](#pgsql-5)
-  - [Select+Where+=Null](#selectwherenull)
-    - [mysql](#mysql-6)
-    - [pgsql](#pgsql-6)
-  - [Select+Where+Null](#selectwherenull-1)
-    - [mysql](#mysql-7)
-    - [pgsql](#pgsql-7)
-  - [Select+Where+NotNull](#selectwherenotnull)
-    - [mysql](#mysql-8)
-    - [pgsql](#pgsql-8)
-  - [Select+Where+Between](#selectwherebetween)
-    - [mysql](#mysql-9)
-    - [pgsql](#pgsql-9)
-  - [Select+Where+Not Between](#selectwherenot-between)
-    - [mysql](#mysql-10)
-    - [pgsql](#pgsql-10)
-  - [Select+Join+Inner](#selectjoininner)
-    - [mysql](#mysql-11)
-    - [pgsql](#pgsql-11)
-  - [Select+Join+Left](#selectjoinleft)
-    - [mysql](#mysql-12)
-    - [pgsql](#pgsql-12)
-  - [Select+Join+Right](#selectjoinright)
-    - [mysql](#mysql-13)
-    - [pgsql](#pgsql-13)
-  - [Select+Join(3)](#selectjoin3)
-    - [mysql](#mysql-14)
-    - [pgsql](#pgsql-14)
-  - [Select+Join+OrderBy 1](#selectjoinorderby-1)
-    - [mysql](#mysql-15)
-    - [pgsql](#pgsql-15)
-  - [Select+Join+OrderBy 2](#selectjoinorderby-2)
-    - [mysql](#mysql-16)
-    - [pgsql](#pgsql-16)
-  - [Select+Sum](#selectsum)
-    - [mysql](#mysql-17)
-    - [pgsql](#pgsql-17)
-  - [Select+Sum(Alias Column)](#selectsumalias-column)
-    - [mysql](#mysql-18)
-    - [pgsql](#pgsql-18)
-  - [Select+Limit 1](#selectlimit-1)
-    - [mysql](#mysql-19)
-    - [pgsql](#pgsql-19)
-  - [Select+Limit 2](#selectlimit-2)
-    - [mysql](#mysql-20)
-    - [pgsql](#pgsql-20)
-  - [Select+Distinct](#selectdistinct)
-    - [mysql](#mysql-21)
-    - [pgsql](#pgsql-21)
-  - [Select+OrderBy](#selectorderby)
-    - [mysql](#mysql-22)
-    - [pgsql](#pgsql-22)
-  - [Select+GroupBy](#selectgroupby)
-    - [mysql](#mysql-23)
-    - [pgsql](#pgsql-23)
-  - [Select+Having](#selecthaving)
-    - [mysql](#mysql-24)
-    - [pgsql](#pgsql-24)
-  - [Select+Having+Between](#selecthavingbetween)
-    - [mysql](#mysql-25)
-    - [pgsql](#pgsql-25)
-  - [Select+Having+Not Between](#selecthavingnot-between)
-    - [mysql](#mysql-26)
-    - [pgsql](#pgsql-26)
-  - [Select+In(Array)](#selectinarray)
-    - [mysql](#mysql-27)
-    - [pgsql](#pgsql-27)
-  - [Select+In(Select)](#selectinselect)
-    - [mysql](#mysql-28)
-    - [pgsql](#pgsql-28)
-  - [Select+In(Select)+MultiColumns](#selectinselectmulticolumns)
-    - [mysql](#mysql-29)
-    - [pgsql](#pgsql-29)
-  - [Select+In(Select)+Function](#selectinselectfunction)
-    - [mysql](#mysql-30)
-    - [pgsql](#pgsql-30)
-  - [Select+In(Select)+Context.Name](#selectinselectcontextname)
-    - [mysql](#mysql-31)
-    - [pgsql](#pgsql-31)
-  - [Insert+Values(Array)](#insertvaluesarray)
-    - [mysql](#mysql-32)
-    - [pgsql](#pgsql-32)
-  - [Insert+Values(Closure)](#insertvaluesclosure)
-    - [mysql](#mysql-33)
-    - [pgsql](#pgsql-33)
-  - [Delete](#delete)
-    - [mysql](#mysql-34)
-    - [pgsql](#pgsql-34)
-  - [Delete+In(Array)](#deleteinarray)
-    - [mysql](#mysql-35)
-    - [pgsql](#pgsql-35)
-  - [Update](#update)
-    - [mysql](#mysql-36)
-    - [pgsql](#pgsql-36)
-  - [Select+Pagination](#selectpagination)
-    - [mysql](#mysql-37)
-    - [pgsql](#pgsql-37)
-
-
-### Select
+### <a name="select"></a>Select
 ```php
 $builder->select(User::class)->get();
 ```
@@ -143,7 +64,7 @@ FROM
 ```
 
 
-### Select(Alias Column)
+### <a name="selectalias-column"></a>Select(Alias Column)
 ```php
 $builder
     ->select(User::class, [
@@ -176,7 +97,7 @@ FROM
 ```
 
 
-### Select+Where+Like
+### <a name="selectwherelike"></a>Select+Where+Like
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -206,7 +127,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereNotLike"></a>Select+Where+Not Like
+### <a name="selectwherenot-like"></a>Select+Where+Not Like
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -236,7 +157,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereWhere1"></a>Select+Where+Where 1
+### <a name="selectwherewhere-1"></a>Select+Where+Where 1
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -278,7 +199,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereWhere2"></a>Select+Where+Where 2
+### <a name="selectwherewhere-2"></a>Select+Where+Where 2
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -320,7 +241,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereNull"></a>Select+Where+=Null
+### <a name="selectwherenull"></a>Select+Where+=Null
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -351,7 +272,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereNull"></a>Select+Where+Null
+### <a name="selectwherenull"></a>Select+Where+Null
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -383,7 +304,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereNotNull"></a>Select+Where+NotNull
+### <a name="selectwherenotnull"></a>Select+Where+NotNull
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -415,7 +336,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereBetween"></a>Select+Where+Between
+### <a name="selectwherebetween"></a>Select+Where+Between
 ```php
 $builder
     ->select(Article::class, ['id'])
@@ -445,7 +366,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectWhereNotBetween"></a>Select+Where+Not Between
+### <a name="selectwherenot-between"></a>Select+Where+Not Between
 ```php
 $builder
     ->select(Article::class, ['id'])
@@ -475,7 +396,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectJoinInner"></a>Select+Join+Inner
+### <a name="selectjoininner"></a>Select+Join+Inner
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -515,7 +436,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectJoinLeft"></a>Select+Join+Left
+### <a name="selectjoinleft"></a>Select+Join+Left
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -555,7 +476,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectJoinRight"></a>Select+Join+Right
+### <a name="selectjoinright"></a>Select+Join+Right
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -595,7 +516,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectJoin3"></a>Select+Join(3)
+### <a name="selectjoin3"></a>Select+Join(3)
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -670,7 +591,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectJoinOrderBy1"></a>Select+Join+OrderBy 1
+### <a name="selectjoinorderby-1"></a>Select+Join+OrderBy 1
 ```php
 $builder
     ->select(Article::class, ['title'])
@@ -722,7 +643,7 @@ ORDER BY
 ```
 
 
-### <a name="user-content-SelectJoinOrderBy2"></a>Select+Join+OrderBy 2
+### <a name="selectjoinorderby-2"></a>Select+Join+OrderBy 2
 ```php
 $select = $builder
     ->select(Article::class, ['title'])
@@ -791,7 +712,7 @@ ORDER BY
 ```
 
 
-### <a name="user-content-SelectSum"></a>Select+Sum
+### <a name="selectsum"></a>Select+Sum
 ```php
 $builder
     ->select(User::class, ['sum(age)'])
@@ -820,7 +741,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectSumAliasColumn"></a>Select+Sum(Alias Column)
+### <a name="selectsumalias-column"></a>Select+Sum(Alias Column)
 ```php
 $builder
     ->select(User::class, [
@@ -854,7 +775,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectLimit1"></a>Select+Limit 1
+### <a name="selectlimit-1"></a>Select+Limit 1
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -881,7 +802,7 @@ LIMIT 10 OFFSET 5
 ```
 
 
-### <a name="user-content-SelectLimit2"></a>Select+Limit 2
+### <a name="selectlimit-2"></a>Select+Limit 2
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -908,7 +829,7 @@ LIMIT 9
 ```
 
 
-### <a name="user-content-SelectDistinct"></a>Select+Distinct
+### <a name="selectdistinct"></a>Select+Distinct
 ```php
 $builder
     ->select(Article::class, ['userId'])
@@ -931,7 +852,7 @@ FROM
 ```
 
 
-### <a name="user-content-SelectOrderBy"></a>Select+OrderBy
+### <a name="selectorderby"></a>Select+OrderBy
 ```php
 $builder
     ->select(User::class, ['id', 'name'])
@@ -967,7 +888,7 @@ DESC
 ```
 
 
-### <a name="user-content-SelectGroupBy"></a>Select+GroupBy
+### <a name="selectgroupby"></a>Select+GroupBy
 ```php
 $builder
     ->select(Article::class, ['userId'])
@@ -994,7 +915,7 @@ GROUP BY
 ```
 
 
-### <a name="user-content-SelectHaving"></a>Select+Having
+### <a name="selecthaving"></a>Select+Having
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -1028,7 +949,7 @@ HAVING
 ```
 
 
-### <a name="user-content-SelectHavingBetween"></a>Select+Having+Between
+### <a name="selecthavingbetween"></a>Select+Having+Between
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -1062,7 +983,7 @@ HAVING
 ```
 
 
-### <a name="user-content-SelectHavingNotBetween"></a>Select+Having+Not Between
+### <a name="selecthavingnot-between"></a>Select+Having+Not Between
 ```php
 $builder
     ->select(Article::class, ['userId', 'count(userId)' => 'cnt'])
@@ -1096,7 +1017,7 @@ HAVING
 ```
 
 
-### <a name="user-content-SelectInArray"></a>Select+In(Array)
+### <a name="selectinarray"></a>Select+In(Array)
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1125,7 +1046,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectInSelect"></a>Select+In(Select)
+### <a name="selectinselect"></a>Select+In(Select)
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1173,7 +1094,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectInSelectMultiColumns"></a>Select+In(Select)+MultiColumns
+### <a name="selectinselectmulticolumns"></a>Select+In(Select)+MultiColumns
 ```php
 $builder
     ->select(User::class, ['name'])
@@ -1228,7 +1149,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectInSelectFunction"></a>Select+In(Select)+Function
+### <a name="selectinselectfunction"></a>Select+In(Select)+Function
 ```php
 $builder
     ->select(Article::class, ['id', 'userId'])
@@ -1269,7 +1190,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectInSelectContextName"></a>Select+In(Select)+Context.Name
+### <a name="selectinselectcontextname"></a>Select+In(Select)+Context.Name
 ```php
 $builder->select(User::class, ['name'])
     ->name('main')
@@ -1317,7 +1238,7 @@ WHERE
 ```
 
 
-### <a name="user-content-InsertValuesArray"></a>Insert+Values(Array)
+### <a name="insertvaluesarray"></a>Insert+Values(Array)
 ```php
 $builder
     ->insert(User::class)
@@ -1331,16 +1252,16 @@ $builder
 #### mysql
 ```sql
 INSERT INTO `shasoft-dbschemadev-table-user`(`name`, `age`, `role`)
-VALUES('Igor', 60, 'Moderator')
+VALUES('Igor', 72, 'Moderator')
 ```
 #### pgsql
 ```sql
 INSERT INTO "shasoft-dbschemadev-table-user"("name", "age", "role")
-VALUES('Igor', 84, 'Moderator')
+VALUES('Igor', 60, 'Moderator')
 ```
 
 
-### <a name="user-content-InsertValuesClosure"></a>Insert+Values(Closure)
+### <a name="insertvaluesclosure"></a>Insert+Values(Closure)
 ```php
 $builder
     ->insert(User::class)
@@ -1389,7 +1310,7 @@ VALUES(
 ```
 
 
-### <a name="user-content-Delete"></a>Delete
+### <a name="delete"></a>Delete
 ```php
 $builder
     ->delete(User::class)
@@ -1417,7 +1338,7 @@ WHERE
 ```
 
 
-### <a name="user-content-DeleteInArray"></a>Delete+In(Array)
+### <a name="deleteinarray"></a>Delete+In(Array)
 ```php
 $builder
     ->delete(User::class)
@@ -1445,7 +1366,7 @@ WHERE
 ```
 
 
-### <a name="user-content-Update"></a>Update
+### <a name="update"></a>Update
 ```php
 $builder
     ->update(User::class)
@@ -1482,7 +1403,7 @@ WHERE
 ```
 
 
-### <a name="user-content-SelectPagination"></a>Select+Pagination
+### <a name="selectpagination"></a>Select+Pagination
 ```php
 $builder->select(User::class, ['id', 'name'])->pagination(2, 3);
 ```
